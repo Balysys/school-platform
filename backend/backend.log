@@ -1,0 +1,93 @@
+
+> school-backend@1.0.0 dev
+> ts-node-dev --respawn src/app.ts
+
+[INFO] 09:50:05 ts-node-dev ver. 2.0.0 (using ts-node ver. 10.9.2, typescript ver. 5.9.3)
+Compilation error in /workspaces/school-platform/backend/src/routes/notes.ts
+[ERROR] 09:50:13 ⨯ Unable to compile TypeScript:
+src/routes/notes.ts(29,44): error TS2353: Object literal may only specify known properties, and 'prenom' does not exist in type 'UtilisateurSelect<DefaultArgs>'.
+src/routes/notes.ts(60,44): error TS2353: Object literal may only specify known properties, and 'prenom' does not exist in type 'UtilisateurSelect<DefaultArgs>'.
+src/routes/notes.ts(151,44): error TS2353: Object literal may only specify known properties, and 'prenom' does not exist in type 'UtilisateurSelect<DefaultArgs>'.
+src/routes/notes.ts(185,44): error TS2353: Object literal may only specify known properties, and 'prenom' does not exist in type 'UtilisateurSelect<DefaultArgs>'.
+
+[INFO] 09:51:12 Restarting: /workspaces/school-platform/backend/src/routes/notes.ts has been modified
+Compilation error in /workspaces/school-platform/backend/src/routes/notes.ts
+[ERROR] 09:51:17 ⨯ Unable to compile TypeScript:
+src/routes/notes.ts(60,44): error TS2353: Object literal may only specify known properties, and 'prenom' does not exist in type 'UtilisateurSelect<DefaultArgs>'.
+src/routes/notes.ts(151,44): error TS2353: Object literal may only specify known properties, and 'prenom' does not exist in type 'UtilisateurSelect<DefaultArgs>'.
+src/routes/notes.ts(185,44): error TS2353: Object literal may only specify known properties, and 'prenom' does not exist in type 'UtilisateurSelect<DefaultArgs>'.
+
+[INFO] 09:51:20 Restarting: /workspaces/school-platform/backend/src/routes/notes.ts has been modified
+Compilation error in /workspaces/school-platform/backend/src/routes/notes.ts
+[ERROR] 09:51:23 ⨯ Unable to compile TypeScript:
+src/routes/notes.ts(151,44): error TS2353: Object literal may only specify known properties, and 'prenom' does not exist in type 'UtilisateurSelect<DefaultArgs>'.
+src/routes/notes.ts(185,44): error TS2353: Object literal may only specify known properties, and 'prenom' does not exist in type 'UtilisateurSelect<DefaultArgs>'.
+
+[INFO] 09:51:25 Restarting: /workspaces/school-platform/backend/src/routes/notes.ts has been modified
+Compilation error in /workspaces/school-platform/backend/src/routes/notes.ts
+[ERROR] 09:51:28 ⨯ Unable to compile TypeScript:
+src/routes/notes.ts(185,44): error TS2353: Object literal may only specify known properties, and 'prenom' does not exist in type 'UtilisateurSelect<DefaultArgs>'.
+
+[INFO] 09:51:30 Restarting: /workspaces/school-platform/backend/src/routes/notes.ts has been modified
+Server running on http://0.0.0.0:3001
+CORS enabled for all origins (development mode)
+[INFO] 09:51:36 Restarting: /workspaces/school-platform/backend/src/routes/notes.ts has been modified
+Server running on http://0.0.0.0:3001
+CORS enabled for all origins (development mode)
+[0mGET /api/auth/health [33m404[0m 5.491 ms - 27[0m
+[0mPOST /api/auth/login [32m200[0m 221.266 ms - 247[0m
+[0mGET /api/notes [32m200[0m 85.573 ms - 78539[0m
+[0mGET /api/eleves [32m200[0m 9.054 ms - 2484[0m
+[0mGET /api/notes [32m200[0m 41.779 ms - 78539[0m
+[0mGET /api/notes [32m200[0m 48.893 ms - 78539[0m
+[0mGET /api/eleves [32m200[0m 5.697 ms - 2484[0m
+[0mGET /api/eleves [32m200[0m 5.671 ms - 2484[0m
+[0mGET /api/notes/eleve/2/moyennes [31m500[0m 36.678 ms - 100[0m
+[0mGET /api/eleves [32m200[0m 7.086 ms - 2484[0m
+[0mGET /api/eleves [32m200[0m 6.079 ms - 2484[0m
+[0mGET /api/notes/eleve/2/moyennes [31m500[0m 5.684 ms - 100[0m
+[0mGET /api/eleves [32m200[0m 6.297 ms - 2484[0m
+[0mGET /api/notes/eleve/2/moyennes [31m500[0m 6.382 ms - 100[0m
+[0mGET /api/eleves [32m200[0m 2.060 ms - 2484[0m
+[0mGET /api/notes/eleve/2/moyennes [31m500[0m 6.761 ms - 100[0m
+[INFO] 09:57:27 Restarting: /workspaces/school-platform/backend/src/routes/notes.ts has been modified
+Server running on http://0.0.0.0:3001
+CORS enabled for all origins (development mode)
+[INFO] 09:57:31 Restarting: /workspaces/school-platform/backend/src/routes/notes.ts has been modified
+Server running on http://0.0.0.0:3001
+CORS enabled for all origins (development mode)
+[INFO] 09:57:40 Restarting: /workspaces/school-platform/backend/src/routes/notes.ts has been modified
+Server running on http://0.0.0.0:3001
+CORS enabled for all origins (development mode)
+[INFO] 09:57:41 Restarting: /workspaces/school-platform/backend/src/routes/notes.ts has been modified
+Server running on http://0.0.0.0:3001
+CORS enabled for all origins (development mode)
+[0mGET /api/notes/eleve/2/moyennes [31m500[0m 80.786 ms - 100[0m
+[0mGET /api/notes/eleve/2/moyennes [31m500[0m 8.687 ms - 100[0m
+[INFO] 09:58:34 Restarting: /workspaces/school-platform/backend/src/routes/notes.ts has been modified
+Server running on http://0.0.0.0:3001
+CORS enabled for all origins (development mode)
+[INFO] 09:58:37 Restarting: /workspaces/school-platform/backend/src/routes/notes.ts has been modified
+Server running on http://0.0.0.0:3001
+CORS enabled for all origins (development mode)
+[INFO] 09:58:42 Restarting: /workspaces/school-platform/backend/src/routes/notes.ts has been modified
+Server running on http://0.0.0.0:3001
+CORS enabled for all origins (development mode)
+[INFO] 09:58:44 Restarting: /workspaces/school-platform/backend/src/routes/notes.ts has been modified
+Server running on http://0.0.0.0:3001
+CORS enabled for all origins (development mode)
+[INFO] 09:58:51 Restarting: /workspaces/school-platform/backend/src/routes/notes.ts has been modified
+Server running on http://0.0.0.0:3001
+CORS enabled for all origins (development mode)
+[INFO] 09:59:00 Restarting: /workspaces/school-platform/backend/src/routes/notes.ts has been modified
+Server running on http://0.0.0.0:3001
+CORS enabled for all origins (development mode)
+[0mGET /api/notes/eleve/2/moyennes [32m200[0m 32.704 ms - 412[0m
+[0mGET /api/notes/eleve/2/moyennes [32m200[0m 4.197 ms - 412[0m
+[0mGET /api/health [36m304[0m 0.565 ms - -[0m
+[0mGET /api/health [36m304[0m 0.347 ms - -[0m
+[0mGET /api/health [36m304[0m 0.205 ms - -[0m
+[0mGET /api/health [36m304[0m 1.246 ms - -[0m
+[INFO] 10:17:16 Restarting: /workspaces/school-platform/backend/src/routes/notes.ts has been modified
+Server running on http://0.0.0.0:3001
+CORS enabled for all origins (development mode)

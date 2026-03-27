@@ -29,6 +29,21 @@ router.get("/", verifyToken, async (req: any, res: any) => {
   }
 });
 
+router.get("/:id", verifyToken, async (req: any, res: any) => {
+  try {
+    const { id } = req.params;
+    const periode = await prisma.periode.findUnique({
+      where: { id: parseInt(id) }
+    });
+    if (!periode) {
+      return res.status(404).json({ message: "Période non trouvée" });
+    }
+    res.json(periode);
+  } catch (error) {
+    res.status(500).json({ message: "Erreur" });
+  }
+});
+
 router.post("/", verifyToken, async (req: any, res: any) => {
   try {
     if (req.user.role !== "ADMIN") {
@@ -43,6 +58,42 @@ router.post("/", verifyToken, async (req: any, res: any) => {
       }
     });
     res.status(201).json(periode);
+  } catch (error) {
+    res.status(500).json({ message: "Erreur" });
+  }
+});
+
+router.put("/:id", verifyToken, async (req: any, res: any) => {
+  try {
+    if (req.user.role !== "ADMIN") {
+      return res.status(403).json({ message: "Accès interdit" });
+    }
+    const { id } = req.params;
+    const { libelle, dateDebut, dateFin } = req.body;
+    const periode = await prisma.periode.update({
+      where: { id: parseInt(id) },
+      data: {
+        libelle,
+        dateDebut: dateDebut ? new Date(dateDebut) : undefined,
+        dateFin: dateFin ? new Date(dateFin) : undefined
+      }
+    });
+    res.json(periode);
+  } catch (error) {
+    res.status(500).json({ message: "Erreur" });
+  }
+});
+
+router.delete("/:id", verifyToken, async (req: any, res: any) => {
+  try {
+    if (req.user.role !== "ADMIN") {
+      return res.status(403).json({ message: "Accès interdit" });
+    }
+    const { id } = req.params;
+    await prisma.periode.delete({
+      where: { id: parseInt(id) }
+    });
+    res.json({ message: "Période supprimée avec succès" });
   } catch (error) {
     res.status(500).json({ message: "Erreur" });
   }

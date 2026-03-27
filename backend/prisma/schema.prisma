@@ -4,13 +4,7 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = "file:./dev.db"
-}
-
-enum Role {
-  ADMIN
-  ENSEIGNANT
-  PARENT
+  url      = env("DATABASE_URL")
 }
 
 model Utilisateur {
@@ -18,7 +12,7 @@ model Utilisateur {
   nom          String
   email        String   @unique
   mot_de_passe String
-  role         Role     @default(PARENT)
+  role         String   @default("PARENT") // "ADMIN", "ENSEIGNANT", or "PARENT"
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
   
@@ -32,10 +26,10 @@ model Eleve {
   prenom         String
   dateNaissance  DateTime
   classeId       Int
-  parentId       Int
+  parentId       Int?
   
   classe         Classe      @relation(fields: [classeId], references: [id])
-  parent         Utilisateur @relation("ParentEleves", fields: [parentId], references: [id])
+  parent         Utilisateur? @relation("ParentEleves", fields: [parentId], references: [id])
   notes          Note[]
 }
 

@@ -29,6 +29,22 @@ router.get("/", verifyToken, async (req: any, res: any) => {
   }
 });
 
+router.get("/:id", verifyToken, async (req: any, res: any) => {
+  try {
+    const { id } = req.params;
+    const classe = await prisma.classe.findUnique({
+      where: { id: parseInt(id) },
+      include: { eleves: true }
+    });
+    if (!classe) {
+      return res.status(404).json({ message: "Classe non trouvée" });
+    }
+    res.json(classe);
+  } catch (error) {
+    res.status(500).json({ message: "Erreur" });
+  }
+});
+
 router.post("/", verifyToken, async (req: any, res: any) => {
   try {
     if (req.user.role !== "ADMIN") {
@@ -39,6 +55,38 @@ router.post("/", verifyToken, async (req: any, res: any) => {
       data: { nom, niveau }
     });
     res.status(201).json(classe);
+  } catch (error) {
+    res.status(500).json({ message: "Erreur" });
+  }
+});
+
+router.put("/:id", verifyToken, async (req: any, res: any) => {
+  try {
+    if (req.user.role !== "ADMIN") {
+      return res.status(403).json({ message: "Accès interdit" });
+    }
+    const { id } = req.params;
+    const { nom, niveau } = req.body;
+    const classe = await prisma.classe.update({
+      where: { id: parseInt(id) },
+      data: { nom, niveau }
+    });
+    res.json(classe);
+  } catch (error) {
+    res.status(500).json({ message: "Erreur" });
+  }
+});
+
+router.delete("/:id", verifyToken, async (req: any, res: any) => {
+  try {
+    if (req.user.role !== "ADMIN") {
+      return res.status(403).json({ message: "Accès interdit" });
+    }
+    const { id } = req.params;
+    await prisma.classe.delete({
+      where: { id: parseInt(id) }
+    });
+    res.json({ message: "Classe supprimée avec succès" });
   } catch (error) {
     res.status(500).json({ message: "Erreur" });
   }
